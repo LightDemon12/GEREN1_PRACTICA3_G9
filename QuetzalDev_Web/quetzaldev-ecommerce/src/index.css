@@ -735,3 +735,73 @@ body {
     margin-bottom: 0.5rem;
   }
 }
+
+/* =========================================
+   ADAPTACIÓN MÓVIL PARA DEMOS (SENTINEL APP)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  /* 1. Cambiar la estructura de 2 columnas a 1 sola */
+  .erp-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. Transformar el menú lateral en una barra de navegación inferior (Bottom Bar) */
+  .erp-sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem;
+    border-right: none;
+    border-top: 1px solid var(--surface);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-deep); /* Tu color sobrio */
+    z-index: 1000;
+    height: auto;
+  }
+
+  /* 3. Ajustar los botones del menú para que parezcan iconos de App */
+  .erp-sidebar-item {
+    flex-direction: column;
+    font-size: 0.65rem;
+    padding: 0.5rem;
+    text-align: center;
+    gap: 4px !important;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .erp-sidebar-item svg {
+    margin-bottom: 2px;
+  }
+
+  /* Ocultar el título "Sentinel Mobile" en la barra inferior para ahorrar espacio */
+  .erp-sidebar > div:first-child {
+    display: none;
+  }
+
+  /* 4. Dar espacio al contenido para que la barra inferior no lo tape */
+  .erp-main {
+    padding-bottom: 80px; /* Espacio para la barra */
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* 5. Cuadrícula de cámaras CCTV a 1 sola columna */
+  .cctv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* 6. Hacer que la tabla de alertas se pueda deslizar hacia los lados */
+  .demo-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
