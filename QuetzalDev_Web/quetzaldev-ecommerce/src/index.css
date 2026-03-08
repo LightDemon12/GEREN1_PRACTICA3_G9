@@ -684,3 +684,54 @@ body {
   border: 1px solid #22c55e;
   border-radius: 8px;
 }
+
+/* =========================================
+   ADAPTACIÓN PARA CELULARES (RESPONSIVE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  /* Apilar el catálogo en 1 sola columna */
+  .catalog-container,
+  .catalog-grid,
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* Ajustar anchos para que no se salgan de la pantalla */
+  .product-card,
+  .demo-container,
+  .checkout-form {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Si tienes un menú de navegación o barra superior, apilarla */
+  nav,
+  .navbar,
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* Ajustar textos para que no se vean gigantes en el teléfono */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Hacer que los botones ocupen todo el ancho para ser fáciles de tocar */
+  button,
+  .btn-primary,
+  .btn-demo {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
